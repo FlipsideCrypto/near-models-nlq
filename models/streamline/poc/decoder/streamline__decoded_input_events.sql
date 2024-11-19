@@ -1,14 +1,5 @@
 {{ config (
     materialized = "view",
-    post_hook = fsc_utils.if_data_call_function_v2(
-        func = 'streamline.udf_bulk_decode_near_events',
-        target = "{{this.schema}}.{{this.identifier}}",
-        params ={ "external_table" :"DECODED_INPUT_EVENTS",
-        "sql_limit" :"500",
-        "producer_batch_size" :"50",
-        "worker_batch_size" :"10",
-        "sql_source" :"{{this.identifier}}" }
-    ),
 ) }}
 
 SELECT 

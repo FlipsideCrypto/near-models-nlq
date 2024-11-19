@@ -14,7 +14,7 @@
                 {{ create_UDF_GET_CHAINHEAD() }}
             {% endset %}
             {% do run_query(sql) %}
-        {{- fsc_utils.create_udfs() -}}
+        {# {{- fsc_utils.create_udfs() -}} #}
         {% endif %}
     {% endif %}
 {% endmacro %}
